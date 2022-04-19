@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:video_player/src/component/page_route.dart';
-import 'package:video_player/src/repository/network/video_service.dart';
-import 'package:video_player/src/repository/video_repository.dart';
+import 'package:video_player_app/src/component/page_route.dart';
+import 'package:video_player_app/src/repository/network/video_service.dart';
+import 'package:video_player_app/src/repository/video_repository.dart';
 
 class AppModule extends Module {
   @override

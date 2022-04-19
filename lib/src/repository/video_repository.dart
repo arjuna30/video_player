@@ -1,5 +1,5 @@
-import 'package:video_player/src/model/video.dart';
-import 'package:video_player/src/repository/network/video_service.dart';
+import 'package:video_player_app/src/model/video.dart';
+import 'package:video_player_app/src/repository/network/video_service.dart';
 
 class VideoRepository {
   final VideoService _service;

@@ -1,4 +1,4 @@
-name: video_player
+name: video_player_app
 description: A simple video player app from public API
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
@@ -16,6 +16,8 @@ dependencies:
   flutter_modular: ^4.5.1+1
   freezed_annotation: ^1.1.0
   json_annotation: ^4.4.0
+  pull_to_refresh: ^2.0.0
+  video_player: ^2.3.0
 
 dev_dependencies:
   flutter_test:

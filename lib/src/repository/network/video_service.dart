@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:video_player/src/model/video.dart';
+import 'package:video_player_app/src/model/video.dart';
 
 class VideoService {
   final Dio _dio;
