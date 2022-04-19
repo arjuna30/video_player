@@ -8,18 +8,19 @@ part of 'video.dart';
 
 _$_Video _$$_VideoFromJson(Map<String, dynamic> json) => _$_Video(
       wrapperType: json['wrapperType'] as String,
-      collectionId: json['collectionId'] as int,
-      collectionArtistId: json['collectionArtistId'] as int,
+      collectionId: json['collectionId'] as int?,
+      collectionArtistId: json['collectionArtistId'] as int?,
       trackId: json['trackId'] as int,
       kind: json['kind'] as String,
       trackName: json['trackName'] as String,
       artistName: json['artistName'] as String,
-      collectionName: json['collectionName'] as String,
+      collectionName: json['collectionName'] as String?,
       previewUrl: json['previewUrl'] as String,
       artworkUrl30: json['artworkUrl30'] as String,
       artworkUrl60: json['artworkUrl60'] as String,
       artworkUrl100: json['artworkUrl100'] as String,
       releaseDate: DateTime.parse(json['releaseDate'] as String),
+      trackTimeMillis: json['trackTimeMillis'] as int,
     );
 
 Map<String, dynamic> _$$_VideoToJson(_$_Video instance) => <String, dynamic>{
@@ -36,4 +37,5 @@ Map<String, dynamic> _$$_VideoToJson(_$_Video instance) => <String, dynamic>{
       'artworkUrl60': instance.artworkUrl60,
       'artworkUrl100': instance.artworkUrl100,
       'releaseDate': instance.releaseDate.toIso8601String(),
+      'trackTimeMillis': instance.trackTimeMillis,
     };

@@ -24,18 +24,19 @@ class _$VideoTearOff {
 
   _Video call(
       {required String wrapperType,
-      required int collectionId,
-      required int collectionArtistId,
+      int? collectionId,
+      int? collectionArtistId,
       required int trackId,
       required String kind,
       required String trackName,
       required String artistName,
-      required String collectionName,
+      String? collectionName,
       required String previewUrl,
       required String artworkUrl30,
       required String artworkUrl60,
       required String artworkUrl100,
-      required DateTime releaseDate}) {
+      required DateTime releaseDate,
+      required int trackTimeMillis}) {
     return _Video(
       wrapperType: wrapperType,
       collectionId: collectionId,
@@ -50,6 +51,7 @@ class _$VideoTearOff {
       artworkUrl60: artworkUrl60,
       artworkUrl100: artworkUrl100,
       releaseDate: releaseDate,
+      trackTimeMillis: trackTimeMillis,
     );
   }
 
@@ -64,18 +66,19 @@ const $Video = _$VideoTearOff();
 /// @nodoc
 mixin _$Video {
   String get wrapperType => throw _privateConstructorUsedError;
-  int get collectionId => throw _privateConstructorUsedError;
-  int get collectionArtistId => throw _privateConstructorUsedError;
+  int? get collectionId => throw _privateConstructorUsedError;
+  int? get collectionArtistId => throw _privateConstructorUsedError;
   int get trackId => throw _privateConstructorUsedError;
   String get kind => throw _privateConstructorUsedError;
   String get trackName => throw _privateConstructorUsedError;
   String get artistName => throw _privateConstructorUsedError;
-  String get collectionName => throw _privateConstructorUsedError;
+  String? get collectionName => throw _privateConstructorUsedError;
   String get previewUrl => throw _privateConstructorUsedError;
   String get artworkUrl30 => throw _privateConstructorUsedError;
   String get artworkUrl60 => throw _privateConstructorUsedError;
   String get artworkUrl100 => throw _privateConstructorUsedError;
   DateTime get releaseDate => throw _privateConstructorUsedError;
+  int get trackTimeMillis => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -88,18 +91,19 @@ abstract class $VideoCopyWith<$Res> {
       _$VideoCopyWithImpl<$Res>;
   $Res call(
       {String wrapperType,
-      int collectionId,
-      int collectionArtistId,
+      int? collectionId,
+      int? collectionArtistId,
       int trackId,
       String kind,
       String trackName,
       String artistName,
-      String collectionName,
+      String? collectionName,
       String previewUrl,
       String artworkUrl30,
       String artworkUrl60,
       String artworkUrl100,
-      DateTime releaseDate});
+      DateTime releaseDate,
+      int trackTimeMillis});
 }
 
 /// @nodoc
@@ -125,6 +129,7 @@ class _$VideoCopyWithImpl<$Res> implements $VideoCopyWith<$Res> {
     Object? artworkUrl60 = freezed,
     Object? artworkUrl100 = freezed,
     Object? releaseDate = freezed,
+    Object? trackTimeMillis = freezed,
   }) {
     return _then(_value.copyWith(
       wrapperType: wrapperType == freezed
@@ -134,11 +139,11 @@ class _$VideoCopyWithImpl<$Res> implements $VideoCopyWith<$Res> {
       collectionId: collectionId == freezed
           ? _value.collectionId
           : collectionId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       collectionArtistId: collectionArtistId == freezed
           ? _value.collectionArtistId
           : collectionArtistId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       trackId: trackId == freezed
           ? _value.trackId
           : trackId // ignore: cast_nullable_to_non_nullable
@@ -158,7 +163,7 @@ class _$VideoCopyWithImpl<$Res> implements $VideoCopyWith<$Res> {
       collectionName: collectionName == freezed
           ? _value.collectionName
           : collectionName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       previewUrl: previewUrl == freezed
           ? _value.previewUrl
           : previewUrl // ignore: cast_nullable_to_non_nullable
@@ -179,6 +184,10 @@ class _$VideoCopyWithImpl<$Res> implements $VideoCopyWith<$Res> {
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      trackTimeMillis: trackTimeMillis == freezed
+          ? _value.trackTimeMillis
+          : trackTimeMillis // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -190,18 +199,19 @@ abstract class _$VideoCopyWith<$Res> implements $VideoCopyWith<$Res> {
   @override
   $Res call(
       {String wrapperType,
-      int collectionId,
-      int collectionArtistId,
+      int? collectionId,
+      int? collectionArtistId,
       int trackId,
       String kind,
       String trackName,
       String artistName,
-      String collectionName,
+      String? collectionName,
       String previewUrl,
       String artworkUrl30,
       String artworkUrl60,
       String artworkUrl100,
-      DateTime releaseDate});
+      DateTime releaseDate,
+      int trackTimeMillis});
 }
 
 /// @nodoc
@@ -228,6 +238,7 @@ class __$VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res>
     Object? artworkUrl60 = freezed,
     Object? artworkUrl100 = freezed,
     Object? releaseDate = freezed,
+    Object? trackTimeMillis = freezed,
   }) {
     return _then(_Video(
       wrapperType: wrapperType == freezed
@@ -237,11 +248,11 @@ class __$VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res>
       collectionId: collectionId == freezed
           ? _value.collectionId
           : collectionId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       collectionArtistId: collectionArtistId == freezed
           ? _value.collectionArtistId
           : collectionArtistId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       trackId: trackId == freezed
           ? _value.trackId
           : trackId // ignore: cast_nullable_to_non_nullable
@@ -261,7 +272,7 @@ class __$VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res>
       collectionName: collectionName == freezed
           ? _value.collectionName
           : collectionName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       previewUrl: previewUrl == freezed
           ? _value.previewUrl
           : previewUrl // ignore: cast_nullable_to_non_nullable
@@ -282,6 +293,10 @@ class __$VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res>
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      trackTimeMillis: trackTimeMillis == freezed
+          ? _value.trackTimeMillis
+          : trackTimeMillis // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -291,18 +306,19 @@ class __$VideoCopyWithImpl<$Res> extends _$VideoCopyWithImpl<$Res>
 class _$_Video implements _Video {
   const _$_Video(
       {required this.wrapperType,
-      required this.collectionId,
-      required this.collectionArtistId,
+      this.collectionId,
+      this.collectionArtistId,
       required this.trackId,
       required this.kind,
       required this.trackName,
       required this.artistName,
-      required this.collectionName,
+      this.collectionName,
       required this.previewUrl,
       required this.artworkUrl30,
       required this.artworkUrl60,
       required this.artworkUrl100,
-      required this.releaseDate});
+      required this.releaseDate,
+      required this.trackTimeMillis});
 
   factory _$_Video.fromJson(Map<String, dynamic> json) =>
       _$$_VideoFromJson(json);
@@ -310,9 +326,9 @@ class _$_Video implements _Video {
   @override
   final String wrapperType;
   @override
-  final int collectionId;
+  final int? collectionId;
   @override
-  final int collectionArtistId;
+  final int? collectionArtistId;
   @override
   final int trackId;
   @override
@@ -322,7 +338,7 @@ class _$_Video implements _Video {
   @override
   final String artistName;
   @override
-  final String collectionName;
+  final String? collectionName;
   @override
   final String previewUrl;
   @override
@@ -333,10 +349,12 @@ class _$_Video implements _Video {
   final String artworkUrl100;
   @override
   final DateTime releaseDate;
+  @override
+  final int trackTimeMillis;
 
   @override
   String toString() {
-    return 'Video(wrapperType: $wrapperType, collectionId: $collectionId, collectionArtistId: $collectionArtistId, trackId: $trackId, kind: $kind, trackName: $trackName, artistName: $artistName, collectionName: $collectionName, previewUrl: $previewUrl, artworkUrl30: $artworkUrl30, artworkUrl60: $artworkUrl60, artworkUrl100: $artworkUrl100, releaseDate: $releaseDate)';
+    return 'Video(wrapperType: $wrapperType, collectionId: $collectionId, collectionArtistId: $collectionArtistId, trackId: $trackId, kind: $kind, trackName: $trackName, artistName: $artistName, collectionName: $collectionName, previewUrl: $previewUrl, artworkUrl30: $artworkUrl30, artworkUrl60: $artworkUrl60, artworkUrl100: $artworkUrl100, releaseDate: $releaseDate, trackTimeMillis: $trackTimeMillis)';
   }
 
   @override
@@ -366,7 +384,9 @@ class _$_Video implements _Video {
             const DeepCollectionEquality()
                 .equals(other.artworkUrl100, artworkUrl100) &&
             const DeepCollectionEquality()
-                .equals(other.releaseDate, releaseDate));
+                .equals(other.releaseDate, releaseDate) &&
+            const DeepCollectionEquality()
+                .equals(other.trackTimeMillis, trackTimeMillis));
   }
 
   @override
@@ -384,7 +404,8 @@ class _$_Video implements _Video {
       const DeepCollectionEquality().hash(artworkUrl30),
       const DeepCollectionEquality().hash(artworkUrl60),
       const DeepCollectionEquality().hash(artworkUrl100),
-      const DeepCollectionEquality().hash(releaseDate));
+      const DeepCollectionEquality().hash(releaseDate),
+      const DeepCollectionEquality().hash(trackTimeMillis));
 
   @JsonKey(ignore: true)
   @override
@@ -400,27 +421,28 @@ class _$_Video implements _Video {
 abstract class _Video implements Video {
   const factory _Video(
       {required String wrapperType,
-      required int collectionId,
-      required int collectionArtistId,
+      int? collectionId,
+      int? collectionArtistId,
       required int trackId,
       required String kind,
       required String trackName,
       required String artistName,
-      required String collectionName,
+      String? collectionName,
       required String previewUrl,
       required String artworkUrl30,
       required String artworkUrl60,
       required String artworkUrl100,
-      required DateTime releaseDate}) = _$_Video;
+      required DateTime releaseDate,
+      required int trackTimeMillis}) = _$_Video;
 
   factory _Video.fromJson(Map<String, dynamic> json) = _$_Video.fromJson;
 
   @override
   String get wrapperType;
   @override
-  int get collectionId;
+  int? get collectionId;
   @override
-  int get collectionArtistId;
+  int? get collectionArtistId;
   @override
   int get trackId;
   @override
@@ -430,7 +452,7 @@ abstract class _Video implements Video {
   @override
   String get artistName;
   @override
-  String get collectionName;
+  String? get collectionName;
   @override
   String get previewUrl;
   @override
@@ -441,6 +463,8 @@ abstract class _Video implements Video {
   String get artworkUrl100;
   @override
   DateTime get releaseDate;
+  @override
+  int get trackTimeMillis;
   @override
   @JsonKey(ignore: true)
   _$VideoCopyWith<_Video> get copyWith => throw _privateConstructorUsedError;
