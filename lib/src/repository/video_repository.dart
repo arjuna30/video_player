@@ -5,6 +5,6 @@ class VideoRepository {
   final VideoService _service;
   VideoRepository(this._service);
 
-  Future<List<Video>> getVideoListByText(String text, int limit) =>
+  Future<List<Video>> getVideoListByText(String text, int limit) async =>
       _service.getVideoListByText(text, limit);
 }
