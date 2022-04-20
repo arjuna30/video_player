@@ -130,32 +130,89 @@ class _BodyHomePageState extends State<_BodyHomePage> {
                             });
                           },
                         ),
-                        Visibility(
-                          visible: _onTouch,
-                          child: Center(
-                            child: GestureDetector(
-                              onTap: () {
-                                _timer?.cancel();
-                                setState(() {
-                                  _playerController.value.isPlaying
-                                      ? _playerController.pause()
-                                      : _playerController.play();
-                                });
-                                if (_playerController.value.isPlaying) {
-                                  _timer = Timer.periodic(
-                                      const Duration(milliseconds: 1000), (_) {
-                                    setState(() {
-                                      _onTouch = false;
-                                    });
-                                  });
-                                }
-                              },
-                              child: Icon(
-                                _playerController.value.isPlaying
-                                    ? Icons.pause
-                                    : Icons.play_arrow,
-                                color: Colors.white,
-                                size: 40,
+                        AnimatedContainer(
+                          duration: const Duration(seconds: 1),
+                          child: Visibility(
+                            visible: _onTouch,
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      _timer?.cancel();
+                                      setState(() {
+                                        _playerController.seekTo(
+                                            _playerController.value.position -
+                                                const Duration(seconds: 10));
+                                      });
+                                      if (_playerController.value.isPlaying) {
+                                        _timer = Timer.periodic(
+                                            const Duration(milliseconds: 1000),
+                                            (_) {
+                                          setState(() {
+                                            _onTouch = false;
+                                          });
+                                        });
+                                      }
+                                    },
+                                    child: const Icon(Icons.replay_10,
+                                        color: Colors.white, size: 30),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      _timer?.cancel();
+                                      setState(() {
+                                        _playerController.value.isPlaying
+                                            ? _playerController.pause()
+                                            : _playerController.play();
+                                      });
+                                      if (_playerController.value.isPlaying) {
+                                        _timer = Timer.periodic(
+                                            const Duration(milliseconds: 1000),
+                                            (_) {
+                                          setState(() {
+                                            _onTouch = false;
+                                          });
+                                        });
+                                      }
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Icon(
+                                        _playerController.value.isPlaying
+                                            ? Icons.pause
+                                            : Icons.play_arrow,
+                                        color: Colors.white,
+                                        size: 60,
+                                      ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      _timer?.cancel();
+                                      setState(() {
+                                        _playerController.seekTo(
+                                            _playerController.value.position +
+                                                const Duration(seconds: 10));
+                                      });
+                                      if (_playerController.value.isPlaying) {
+                                        _timer = Timer.periodic(
+                                            const Duration(milliseconds: 1000),
+                                            (_) {
+                                          setState(() {
+                                            _onTouch = false;
+                                          });
+                                        });
+                                      }
+                                    },
+                                    child: const Icon(
+                                      Icons.forward_10,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
