@@ -15,7 +15,9 @@ class VideoService {
     final decoded = json.decode(response.data);
     final videos = decoded['results'] as List;
     for (final video in videos) {
-      videoList.add(Video.fromJson(video));
+      if (video['previewUrl'] != null) {
+        videoList.add(Video.fromJson(video));
+      }
     }
     return videoList;
   }
